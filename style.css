@@ -9,3 +9,7 @@
 div[hidden="true"] {
   display: none;
 }
+
+button[aria-selected="true"] {
+  background: lightblue;
+}
