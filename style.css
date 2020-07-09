@@ -42,7 +42,7 @@ body {
 }
 
 .cms__tabs-list-button[role="tab"][aria-selected="true"] {
-  border-top: 2px solid #2bb0b2;
+  border-top: 4px solid #2bb0b2;
   border-bottom: 2px solid white;
   background: white;
   z-index: 2;

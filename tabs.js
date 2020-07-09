@@ -1,6 +1,59 @@
 console.log('log from tabs.js');
 
 document.onload  = (() => {
+//id="tab-1" role="tab" tabindex="0" aria-controls="content-1"
+//aria-selected="true"
+
+    function createTabs() {
+        const TABS_FROM_CMS = [
+            {
+                tabId: 'tab-1', 
+                tabTitle: 'Tab 1',
+                contentTitle: 'Title 1',
+                content: 'Content 1'
+            },
+            {
+                tabId: 'tab-2', 
+                tabTitle: 'Tab 2',
+                contentTitle: 'Title 2',
+                content: 'Content 2'
+            },
+            {
+                tabId: 'tab-3', 
+                tabTitle: 'Tab 3',
+                contentTitle: 'Title 3',
+                content: 'Content 3'
+            },
+        ];
+
+        const tabsParent = document.querySelector('[role="tablist"]');
+
+        TABS_FROM_CMS.forEach((tabData, i) => {
+            // create buttons
+
+            const button = document.createElement('button');
+            button.classList.add('cms__tabs-list-button');
+            button.setAttribute('id', tabData.tabId);
+            button.setAttribute('role', 'tab');
+            button.setAttribute('tabindex', '-1');
+            button.setAttribute('aria-controls', tabData.tabId.replace('tab', 'content'));
+            button.setAttribute('aria-selected', false);
+            button.textContent = tabData.tabTitle;
+
+            if (i === 0) {
+                button.setAttribute('tabindex', '0');
+                button.setAttribute('aria-selected', true);
+            }
+
+            tabsParent.append(button);
+        });
+
+    }   
+
+
+    createTabs()
+
+
     const tabsParent = document.querySelector('[role="tablist"]');
     const tabs = document.querySelectorAll('[role="tab"]');
     const contentEls = document.querySelectorAll('[role="tabpanel"]');
