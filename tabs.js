@@ -1,12 +1,9 @@
 console.log('log from tabs.js');
 
 document.onload  = (() => {
-
+    const tabsParent = document.querySelector('[role="tablist"]');
     const tabs = document.querySelectorAll('[role="tab"]');
-    console.log("document.onload -> tabs", tabs)
     const contentEls = document.querySelectorAll('[role="tabpanel"]');
-    console.log("document.onload -> contentEls", contentEls);
-
 
     function updateTab(e) {
         // update tab selected
@@ -39,5 +36,32 @@ document.onload  = (() => {
     tabs.forEach(tab => {
         tab.addEventListener('click', updateTab);
     })
+
+
+    let tabFocus = 0;
+
+    tabsParent.addEventListener("keydown", e => {
+    
+      if (e.keyCode === 39 || e.keyCode === 37) {
+        tabs[tabFocus].setAttribute("tabindex", -1);
+        if (e.keyCode === 39) {
+          tabFocus++;
+    
+          if (tabFocus >= tabs.length) {
+            tabFocus = 0;
+          }
+   
+        } else if (e.keyCode === 37) {
+          tabFocus--;
+ 
+          if (tabFocus < 0) {
+            tabFocus = tabs.length - 1;
+          }
+        }
+  
+        tabs[tabFocus].setAttribute("tabindex", 0);
+        tabs[tabFocus].focus();
+      }
+    });
 
 })()
