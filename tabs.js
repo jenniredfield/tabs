@@ -23,6 +23,16 @@ document.onload  = (() => {
         });
 
         // update content selected
+        contentEls.forEach(contentEl => {
+            const ariaControlledBy = contentEl.getAttribute('aria-labelledby');
+            console.log("updateTab -> ariaControlledBy", ariaControlledBy)
+            
+            if (ariaControlledBy === targetId) {
+                contentEl.removeAttribute('hidden');
+                return;
+            }
+            contentEl.setAttribute('hidden', true);
+        })
 
     }
 
