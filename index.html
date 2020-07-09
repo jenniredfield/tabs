@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>Tab Challenge</title>
-		<link rel="stylesheet" href="style.css">
-		<script src="tabs.js"></script>
-	</head>
-	<body>
-		<p>Some tabs here 🗂</p>
-	</body>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Tab Challenge</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+	<div class="cms__container">
+		<div class="cms__tabs-list-container">
+			<button id="tab-1" role="tabs" tabindex="0" aria-controls="content-1" aria-selected="true">
+				Tab 1
+			</button>
+			<button id="tab-2" role="tabs" tabindex="-1" aria-controls="content-2" aria-selected="false">
+				Tab 2
+			</button>
+			<button id="tab-3" role="tabs" tabindex="-1" aria-controls="content-3" aria-selected="false">
+				Tab 3
+			</button>
+		</div>
+		<div class="cms__tabs-content-container">
+			<div class="cms__tabs-content-item" id="content-1" tabindex="0">
+				<h1>Title 1</h1>
+				<p>Content 1</p>
+			</div>
+			<div class="cms__tabs-content-item" id="content-2" hidden tabindex="0">
+				<h1>Title 2</h1>
+				<p>Content 2</p>
+			</div>
+			<div class="cms__tabs-content-item" id="content-3" hidden tabindex="0">
+				<h1>Title 3</h1>
+				<p>Content 3</p>
+			</div>
+		</div>
+	</div>
+	<script src="tabs.js"></script>
+</body>
+
 </html>
