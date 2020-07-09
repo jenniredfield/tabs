@@ -12,29 +12,32 @@
 <body>
 	<div class="cms__container">
 		<div class="cms__tabs-list-container" aria-label="Challenge Tabs" role="tablist">
-			<button id="tab-1" role="tab" tabindex="0" aria-controls="content-1" aria-selected="true">
+			<button class="cms__tabs-list-button" id="tab-1" role="tab" tabindex="0" aria-controls="content-1"
+				aria-selected="true">
 				Tab 1
 			</button>
-			<button id="tab-2" role="tab" tabindex="-1" aria-controls="content-2" aria-selected="false">
+			<button class="cms__tabs-list-button" id="tab-2" role="tab" tabindex="-1" aria-controls="content-2"
+				aria-selected="false">
 				Tab 2
 			</button>
-			<button id="tab-3" role="tab" tabindex="-1" aria-controls="content-3" aria-selected="false">
+			<button class="cms__tabs-list-button" id="tab-3" role="tab" tabindex="-1" aria-controls="content-3"
+				aria-selected="false">
 				Tab 3
 			</button>
 		</div>
 		<div class="cms__tabs-content-container">
 			<div class="cms__tabs-content-item" id="content-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
-				<h1>Title 1</h1>
+				<h2>Title 1</h2>
 				<p>Content 1</p>
 			</div>
 			<div class="cms__tabs-content-item" id="content-2" role="tabpanel" hidden tabindex="0"
 				aria-labelledby="tab-2">
-				<h1>Title 2</h1>
+				<h2>Title 2</h2>
 				<p>Content 2</p>
 			</div>
 			<div class="cms__tabs-content-item" id="content-3" role="tabpanel" hidden tabindex="0"
 				aria-labelledby="tab-3">
-				<h1>Title 3</h1>
+				<h2>Title 3</h2>
 				<p>Content 3</p>
 			</div>
 		</div>
